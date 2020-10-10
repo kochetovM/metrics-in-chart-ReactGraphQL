@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
-import Weather from '../Features/Weather/Weather';
+import Measurement from '../Features/MetricsGetTest/Measurement';
 
 const useStyles = makeStyles({
   grow: {
@@ -14,14 +14,14 @@ const useStyles = makeStyles({
 export default () => {
   const classes = useStyles();
 
-  const name = "Mike's";
+  const name = "Metrics";
   return (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" color="inherit" className={classes.grow}>
-          {name} EOG React Visualization Assessment
+            {name} Charts
         </Typography>
-        <Weather />
+        <Measurement />
       </Toolbar>
     </AppBar>
   );

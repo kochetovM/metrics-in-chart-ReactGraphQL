@@ -44,10 +44,6 @@ export default () => {
           </ListItem>
         </List>
 
-        <Typography variant="body1">
-          Remember to refer to our <a href="https://react.eogresources.com/assessing">How We Assess Submissions</a>{' '}
-          guidelines, as well as the <a href="https://react.eogresources.com/api">GraphQL API Documentation</a>.
-        </Typography>
       </CardContent>
     </Card>
   );

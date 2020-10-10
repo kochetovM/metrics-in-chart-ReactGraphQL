@@ -32,9 +32,11 @@ const getWeather = (state: IState) => {
 
 export default () => {
   return (
-    <Provider value={client}>
-      <Weather />
-    </Provider>
+    /*<Provider value={client}>*/
+      <div>
+        {/*<Weather />*/}
+      </div>
+   /* </Provider>*/
   );
 };
 
@@ -66,6 +68,6 @@ const Weather = () => {
   }, [dispatch, data, error]);
 
   if (fetching) return <LinearProgress />;
-
-  return <Chip label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}°`} />;
+  return;
+  //return <Chip label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}°`} />;
 };
