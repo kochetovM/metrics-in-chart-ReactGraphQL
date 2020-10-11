@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from 'redux-starter-kit';
+import { createSlice, PayloadAction } from "redux-starter-kit";
 
 export type Measurement = {
   metric: string;
-  at: number ;
+  at: number;
   value: number;
   unit: string;
 };
@@ -12,30 +12,30 @@ export type ApiErrorAction = {
 };
 
 const initialState = {
-  metric: '',
+  metric: "",
   value: 0,
-  unit: '',
-  at: 0,
+  unit: "",
+  at: 0
 };
 
 //const toF = (c: number) => (c * 9) / 5 + 32;
 
 const slice = createSlice({
-  name: 'measurement',
+  name: "measurement",
   initialState,
   reducers: {
     measurementDataRecevied: (state, action: PayloadAction<Measurement>) => {
-
-      console.log("payload:", action.payload);
-
-      const { metric,value,unit,at } = action.payload;
+      const { metric, value, unit, at } = action.payload;
       state.metric = metric;
       state.value = value;
       state.unit = unit;
       state.at = at;
     },
-    getMeasurementApiErrorReceived: (state, action: PayloadAction<ApiErrorAction>) => state,
-  },
+    getMeasurementApiErrorReceived: (
+      state,
+      action: PayloadAction<ApiErrorAction>
+    ) => state
+  }
 });
 
 export const reducer = slice.reducer;
