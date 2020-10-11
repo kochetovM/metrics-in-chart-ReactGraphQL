@@ -66,7 +66,6 @@ const AvailableCharts = () => {
     setOptionlist([...optionlist, name]);
     const newList: string[] = selectedMetrics.filter(e => e != name);
     setSelectedMetrics(newList);
-
   };
 
   return (
