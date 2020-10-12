@@ -1,16 +1,29 @@
 import React from "react";
 import createStore from "./store";
-import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  makeStyles,
+  createStyles
+} from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
-import AvailableCharts from "./Features/ChartsMenu/AvailableCharts";
+import AvaiableCharts from "./Features/ChartsMenu/AvailableCharts";
+import {
+  createClient,
+  Provider as GQLProvider,
+  defaultExchanges,
+  subscriptionExchange
+} from "urql";
+import { Provider } from "react-redux";
+import { SubscriptionClient } from "subscriptions-transport-ws";
+import HistoryMetrics from "./Features/HistoryMetrics/HistoryMetrics";
+import { CurrentMetrics } from "./Features/CurrentMetrics/CurrentMetrics";
 
 const store = createStore();
-
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -25,17 +38,62 @@ const theme = createMuiTheme({
   }
 });
 
-const App = () => (
-  <MuiThemeProvider theme={theme}>
-    <CssBaseline />
-    <Provider store={store}>
-      <Wrapper>
-        <Header />
-        <AvailableCharts />
-        <ToastContainer />
-      </Wrapper>
-    </Provider>
-  </MuiThemeProvider>
+const subscriptionClient = new SubscriptionClient(
+  "wss://react.eogresources.com/graphql",
+  {
+    reconnect: true
+  }
 );
+
+const client = createClient({
+  url: "https://react.eogresources.com/graphql",
+  exchanges: [
+    ...defaultExchanges,
+    subscriptionExchange({
+      forwardSubscription(operation) {
+        return subscriptionClient.request(operation);
+      }
+    })
+  ]
+});
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    workingArea: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      padding: "20px 40px"
+    },
+    metrics: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between"
+    }
+  })
+);
+const App = () => {
+  const classes = useStyles();
+  return (
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Provider store={store}>
+        <Wrapper>
+          <GQLProvider value={client}>
+            <Header />
+            <div className={classes.workingArea}>
+              <div className={classes.metrics}>
+                <CurrentMetrics />
+                <AvaiableCharts />
+              </div>
+              <HistoryMetrics />
+              <ToastContainer />
+            </div>
+          </GQLProvider>
+        </Wrapper>
+      </Provider>
+    </MuiThemeProvider>
+  );
+};
 
 export default App;

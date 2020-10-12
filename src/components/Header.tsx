@@ -1,14 +1,14 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { makeStyles } from '@material-ui/core/styles';
-import Measurement from '../Features/MetricsGetTest/Measurement';
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import { makeStyles } from "@material-ui/core/styles";
+import Weather from "../Features/Weather/Weather";
 
 const useStyles = makeStyles({
   grow: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 });
 
 export default () => {
@@ -19,9 +19,9 @@ export default () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" color="inherit" className={classes.grow}>
-            {name} Charts
+          {name} Charts
         </Typography>
-        <Measurement />
+        <Weather />
       </Toolbar>
     </AppBar>
   );

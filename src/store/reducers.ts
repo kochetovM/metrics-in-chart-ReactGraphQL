@@ -1,9 +1,11 @@
 import { reducer as weatherReducer } from "../Features/Weather/reducer";
-import { reducer as measurementReducer } from "../Features/MetricsGetTest/reducer";
-import { reducer as availableCharts } from "../Features/ChartsMenu/reducer";
+import { reducer as chartsReducer } from "../Features/ChartsMenu/reducer";
+import { reducer as historyMetricsReducer } from "../Features/HistoryMetrics/reducer";
+import { reducer as currentMetricsReducer } from "../Features/CurrentMetrics/reducer";
 
 export default {
   weather: weatherReducer,
-  measurement: measurementReducer,
-  availableCharts: availableCharts
+  availableCharts: chartsReducer,
+  currentMetrics: currentMetricsReducer,
+  historyMetrics: historyMetricsReducer
 };

@@ -38,8 +38,8 @@ export type SelectOption = {
 type SelectProps = {
   options: string[];
   selectedOptions: string[];
-  handleChange: (event: React.ChangeEvent<{ value: any }>) => void;
-  handleDelete: (e: any) => void;
+  handleChange: (e: any) => void;
+  handleDelete: (metric: string) => (e: any) => void;
 };
 export default ({
   options,
@@ -65,7 +65,7 @@ export default ({
                 key={value}
                 label={value}
                 className={classes.chip}
-                onDelete={handleDelete}
+                onDelete={handleDelete(value as string)}
                 onMouseDown={event => {
                   event.stopPropagation();
                 }}
