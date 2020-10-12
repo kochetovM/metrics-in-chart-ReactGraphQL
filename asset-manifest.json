@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/metrics-in-chart-ReactGraphQL/static/js/main.aa1ea799.chunk.js",
+    "main.js.map": "/metrics-in-chart-ReactGraphQL/static/js/main.aa1ea799.chunk.js.map",
+    "runtime-main.js": "/metrics-in-chart-ReactGraphQL/static/js/runtime-main.4216e6cc.js",
+    "runtime-main.js.map": "/metrics-in-chart-ReactGraphQL/static/js/runtime-main.4216e6cc.js.map",
+    "static/css/2.f42e59c9.chunk.css": "/metrics-in-chart-ReactGraphQL/static/css/2.f42e59c9.chunk.css",
+    "static/js/2.7449dc93.chunk.js": "/metrics-in-chart-ReactGraphQL/static/js/2.7449dc93.chunk.js",
+    "static/js/2.7449dc93.chunk.js.map": "/metrics-in-chart-ReactGraphQL/static/js/2.7449dc93.chunk.js.map",
+    "index.html": "/metrics-in-chart-ReactGraphQL/index.html",
+    "precache-manifest.38d0bd19b112fcff78a218d328f52aad.js": "/metrics-in-chart-ReactGraphQL/precache-manifest.38d0bd19b112fcff78a218d328f52aad.js",
+    "service-worker.js": "/metrics-in-chart-ReactGraphQL/service-worker.js",
+    "static/css/2.f42e59c9.chunk.css.map": "/metrics-in-chart-ReactGraphQL/static/css/2.f42e59c9.chunk.css.map",
+    "static/js/2.7449dc93.chunk.js.LICENSE.txt": "/metrics-in-chart-ReactGraphQL/static/js/2.7449dc93.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4216e6cc.js",
+    "static/css/2.f42e59c9.chunk.css",
+    "static/js/2.7449dc93.chunk.js",
+    "static/js/main.aa1ea799.chunk.js"
+  ]
+}
