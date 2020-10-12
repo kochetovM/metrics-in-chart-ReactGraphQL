@@ -26,21 +26,18 @@ const HistoryChart = ({ data }: { data: any }) => {
     return {
       label: key,
       type: "line",
+      borderWidth: 1,
       fill: false,
       data: (measurements as NewMeasurement[]).map(({ at, value }) => ({
         t: at,
         y: value
       })),
       yAxisID: `y-${key}`,
-      lineTension: 0.1,
+      lineTension: 0,
       borderColor: colors[i],
-      borderCapStyle: "butt",
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: "miter",
-      pointHoverRadius: 0,
-      pointHoverBorderWidth: 2,
-      pointRadius: 2
+      pointHoverRadius: 8,
+      pointHoverBorderWidth: 10,
+      pointRadius: 0
     };
   });
 
@@ -49,12 +46,7 @@ const HistoryChart = ({ data }: { data: any }) => {
       data={{ datasets: datalabels }}
       options={{
         scales: {
-          xAxes: [
-            {
-              type: "time",
-              distribution: "linear"
-            }
-          ],
+          xAxes: [{ type: "time", distribution: "linear" }],
           yAxes
         }
       }}

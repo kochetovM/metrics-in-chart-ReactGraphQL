@@ -10,8 +10,8 @@ import {
 const useStyles = makeStyles(
   createStyles({
     card: {
-      maxWidth: "200px",
-      padding: "10px 20px"
+      maxWidth: "130px",
+      padding: "7px 7px"
     },
     container: {
       width: "50%"
@@ -33,7 +33,7 @@ const CurrentMetricCard = ({
       <Typography variant="body2" gutterBottom>
         {metric}
       </Typography>
-      <Typography variant="h4">{value}</Typography>
+      <Typography variant="h6">{value}</Typography>
     </Card>
   );
 };
@@ -48,7 +48,7 @@ export default ({
   return (
     <Grid
       container
-      spacing={1}
+      spacing={2}
       className={classes.container}
       direction="row"
       justify="flex-start"
@@ -56,7 +56,7 @@ export default ({
     >
       {Object.entries(currentMetrics).map(([metric, value], i) => {
         return (
-          <Grid item xs={4} key={metric + i}>
+          <Grid item xs={3} key={metric + i}>
             <CurrentMetricCard metric={metric} value={value} />
           </Grid>
         );

@@ -22,6 +22,7 @@ import { Provider } from "react-redux";
 import { SubscriptionClient } from "subscriptions-transport-ws";
 import HistoryMetrics from "./Features/HistoryMetrics/HistoryMetrics";
 import { CurrentMetrics } from "./Features/CurrentMetrics/CurrentMetrics";
+import { Grid } from "@material-ui/core";
 
 const store = createStore();
 const theme = createMuiTheme({
@@ -63,12 +64,13 @@ const useStyles = makeStyles(() =>
       width: "100%",
       display: "flex",
       flexDirection: "column",
-      padding: "20px 40px"
+      padding: "20px"
     },
     metrics: {
       width: "100%",
       display: "flex",
-      justifyContent: "space-between"
+      justifyContent: "flex-start",
+      marginBottom: "30px"
     }
   })
 );
@@ -81,13 +83,21 @@ const App = () => {
         <Wrapper>
           <GQLProvider value={client}>
             <Header />
+
             <div className={classes.workingArea}>
               <div className={classes.metrics}>
                 <CurrentMetrics />
                 <AvaiableCharts />
               </div>
-              <HistoryMetrics />
-              <ToastContainer />
+
+              <Grid container spacing={2} direction="row">
+                <Grid item xs={11} justify="center" alignItems="center">
+                  <HistoryMetrics />
+                  <ToastContainer />
+                </Grid>
+
+                <Grid item xs={1}></Grid>
+              </Grid>
             </div>
           </GQLProvider>
         </Wrapper>

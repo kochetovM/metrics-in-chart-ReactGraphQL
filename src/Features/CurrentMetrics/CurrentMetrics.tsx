@@ -7,14 +7,14 @@ import { getAvaiableCharts } from "../ChartsMenu/AvailableCharts";
 import { actions, NewMeasurement } from "./reducer";
 
 const newMeasurement = `
-    subscription NewMeasurement {
-        newMeasurement {
-            metric
-            at
-            value
-            unit
-        }
+  subscription NewMeasurement {
+    newMeasurement {
+        metric
+        at
+        value
+        unit
     }
+  }
 `;
 
 const handleSub = (messages: any[] = [], response: any): any => {

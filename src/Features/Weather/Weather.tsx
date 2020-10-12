@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "./reducer";
-import { Provider, createClient, useQuery } from "urql";
+import { useQuery } from "urql";
 import { useGeolocation } from "react-use";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Chip from "../../components/Chip";
@@ -64,6 +64,9 @@ const Weather = () => {
   }, [dispatch, data, error]);
 
   if (fetching) return <LinearProgress />;
-  return;
-  //return <Chip label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}°`} />;
+  return (
+    <Chip
+      label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}°`}
+    />
+  );
 };

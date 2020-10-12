@@ -21,7 +21,7 @@ const query = `
     }
 `;
 
-const calc30minsago = Date.now() - 30 * 60 * 1000;
+const calc30minago = Date.now() - 30 * 60 * 1000;
 
 const getHistoryMetrics = (state: IState) => {
   return {
@@ -40,7 +40,7 @@ const HistoryMetrics = () => {
     query,
     variables: {
       metricName: currentSelectedMetric,
-      afterTime: calc30minsago
+      afterTime: calc30minago
     }
   });
   const { data, error } = result;
