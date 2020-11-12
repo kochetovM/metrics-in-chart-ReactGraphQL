@@ -16,6 +16,7 @@ const HistoryChart = ({ data }: { data: any }) => {
     return null;
   }
   const yAxes: { id: string; type: string; position: string }[] = [];
+
   const datalabels = Object.entries(data).map(([key, measurements], i) => {
     yAxes.push({
       id: `y-${key}`,
