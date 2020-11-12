@@ -1,5 +1,6 @@
 ## Create React App Visualization
 
-This assessment was bespoke handcrafted for Mike. 
+Preview  link:
+https://kochetovm.github.io/metrics-in-chart-ReactGraphQL/
 
 
