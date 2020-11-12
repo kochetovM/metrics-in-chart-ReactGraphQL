@@ -1,5 +1,6 @@
-## Create React App Visualization
+##  React App Visualization for real time data updates, Using GraphQL, Crartjs
 
-This assessment was bespoke handcrafted for Mike. 
+Preview  link:
+https://kochetovm.github.io/metrics-in-chart-ReactGraphQL/
 
 
