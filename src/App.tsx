@@ -84,12 +84,13 @@ const App = () => {
           <GQLProvider value={client}>
             <Header />
 
+            {/*  Show hidded list of metricks to choose and show chart when you choose one  */}
+            {/*   chart update by and using  GrapQL subscrition  */}
             <div className={classes.workingArea}>
               <div className={classes.metrics}>
                 <CurrentMetrics />
                 <AvaiableCharts />
               </div>
-
               <Grid container spacing={2} direction="row">
                 <Grid item xs={11} justify="center" alignItems="center">
                   <HistoryMetrics />
